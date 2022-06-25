@@ -12,6 +12,7 @@ def subtraction(x, y):
 class MyTestCase(unittest.TestCase):
     def test_2つの整数の和が計算できる(self):
         self.assertEqual(7, add(3, 4))
+        self.assertEqual(4, add(3, 1))
 
 
 class MyTestCase(unittest.TestCase):
