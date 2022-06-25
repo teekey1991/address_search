@@ -1,6 +1,5 @@
 import requests
 
-
 def search_address(postal_code):
     response = requests.get(
         f"https://zipcloud.ibsnet.co.jp/api/search?zipcode={postal_code}"
