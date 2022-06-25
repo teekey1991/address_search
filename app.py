@@ -1,19 +1,25 @@
-import requests
+"""
+郵便番号7桁(0287111)を入力したら
+岩手県八幡平市大更が出力される
+
+python app.py
+郵便番号<ハイフン無し>は? 0287111
+岩手県八幡平市大更
+"""
 
 
-# postal_code = input("郵便番号を入力ください > ")
-postal_code = "0287111"
 
-response = requests.get(
-    f"https://zipcloud.ibsnet.co.jp/api/search?zipcode={postal_code}"
-)
 
-print(response)
-# print(response.text)  #テキスト
-dic = response.json() #パース
-#print(dic)
-pref_name = dic['results'][0]['address1'] #都道府県
-city_name = dic['results'][0]['address2'] #市区
-town_name = dic['results'][0]['address3'] #町村
+def main():
+    # postal_code = input("郵便番号<ハイフン無し>は? ")
+    postal_code = '0287111'
 
-print(f"{pref_name}{city_name}{town_name}")
+    address = search_address(postal_code)
+
+    print(address)
+
+
+
+
+if __name__ == "__main__":
+    main()
